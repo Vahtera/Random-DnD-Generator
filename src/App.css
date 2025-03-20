@@ -1,0 +1,135 @@
+root {
+    background-color: #222; /* Dark background */   
+}
+
+/* Reset styles */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+}
+
+/* Main app container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    /* max-width: 600px; */
+    height: 100vh;
+    padding: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header stays at the top */
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Generate button */
+.generate-button {
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+}
+    .generate-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Scrollable list container */
+.list-container {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #333; /* Darker gray for contrast */
+    color: #fff; /* White text */
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%; /* Ensures it doesn't exceed its parent's width */
+    box-sizing: border-box; /* Prevents unintended overflow */
+    max-height: 60vh;
+    overflow-y: auto;
+    min-height: 200px;
+}
+
+/* List items */
+.list-item {
+    padding: 8px;
+    margin: 4px 0;
+    background: #444; /* Slightly lighter gray */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+    .list-item:hover {
+        background-color: #e0e0e0;
+        color: #000;
+        cursor: pointer;
+    }
+
+/* Button container sticks to the bottom */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    background: #222;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Buttons */
+.action-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .action-button:hover {
+        background-color: #0056b3;
+    }
