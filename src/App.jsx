@@ -65,11 +65,22 @@ function App() {
         link.click();
     };
 
-    const handleCopyToClipboard = (text) => {
-        navigator.clipboard.writeText(text)
-            .then(() => alert(`Copied: ${text}`))
-            .catch(err => console.error("Failed to copy: ", err));
+    const handleCopyToClipboard = async (text) => {
+        if (!navigator.clipboard) {
+            console.error("Clipboard API not available.");
+            alert("Clipboard copy failed. Try manually selecting and copying.");
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(text);
+            alert(`Copied: ${text}`);
+        } catch (err) {
+            console.error("Clipboard copy failed:", err);
+            alert("Clipboard copy failed. Try manually selecting and copying.");
+        }
     };
+
 
     const handleClearList = () => {
         setSelectedPhrases([]);
